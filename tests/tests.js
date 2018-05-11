@@ -1,5 +1,6 @@
+var CalculatorApp = require('../app/app.js')
 var CalculatorAppTests = function(){
-  
+
   this['calculator can store numbers'] = function(){
     var calculatorApp = new CalculatorApp()
     var expected = 0
@@ -10,3 +11,4 @@ var CalculatorAppTests = function(){
   }
 
 }
+module.exports = CalculatorAppTests
