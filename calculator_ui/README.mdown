@@ -1,0 +1,19 @@
+# calculator
+
+performs basic calculations
+
+## Requirements
+
+
+## Setup
+
+1. Open index.html file
+
+## Usage
+
+2. Use keyboard to perform calculations
+3. Use buttons on calculator to perform calculations
+
+## Developement
+
+## References

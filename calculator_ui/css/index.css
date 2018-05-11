@@ -1,0 +1,82 @@
+#outer_div {
+        position : fixed;
+        height : 50%;
+        width : 20%;
+        top : 15%;
+        left : 40%;
+    border-radius: 5%;
+    box-shadow: 5px;
+background: linear-gradient(45deg, rgba(243,226,199,1) 44%,rgba(193,158,103,1) 48%,rgba(182,141,76,1) 51%,rgba(233,212,179,1) 73%);
+        border-width: 4px;
+        border-style: outset;
+        box-shadow: 1px 4px;
+        border-color: silver;
+}
+#display {
+    position: relative;
+    height: 22%;
+    width: 89%;
+    top: 3%;
+    left: 4%;
+    background: linear-gradient(45deg, #e2e2e2 20%,#d1d1d1 49%,#dbdbdb 50%,#fefefe 70%);
+    background-color: white;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    text-align: center;
+    font-size: 250%;
+    border-radius: 7%;
+        border-width: 4px;
+        border-style: inset;
+        box-shadow: 1px 4px;
+        border-color: silver;
+}
+#session_history {
+        position: relative;
+        height: 10%;
+        width: 89%;
+        top: 7%;
+        left: 4%;
+        background: linear-gradient(135deg, #b4ddb4 0%,#83c783 29%,#52b152 33%,#008a00 55%,#005700 83%,#002400 92%);
+        overflow: hidden;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        text-align: center;
+        border-radius: 5%;
+        font-size: 100%;
+        border-width: 4px;
+        border-style: inset;
+        box-shadow: 1px 4px;
+        border-color: silver;
+}
+#buttons_div {
+    position: relative;
+    height: 46%;
+    width: 89%;
+    top: 11%;
+    left: 4%;
+    border-radius: 10%;
+    background-color: white;
+    border-width: 4px;
+    border-style: inset;
+    box-shadow: 1px 4px;
+    border-color: silver;
+}
+#buttons_table {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+    border-radius: 25%;
+        left: 0%;
+}
+.buttons {
+    position: relative;
+    height: 83%;
+    width: 22%;
+    top: 9%;
+    left: 4%;
+    background: radial-gradient(ellipse at center, #4c4c4c 1%,#595959 22%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 59%,#000000 59%,#111111 71%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+    border-radius: 25%;
+    color: white;
+    background-color: white;
+}
