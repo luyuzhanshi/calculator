@@ -31,6 +31,17 @@ var CalculatorAppTests = function(){
       var result = actual == expected
       return result
   }
-  
+
+  this['calculator can perform calculations'] = function(){
+      var calculatorApp = new CalculatorApp()
+      var expected = '5'
+      calculatorApp.determineAction('2')
+      calculatorApp.determineAction('+')
+      calculatorApp.determineAction('3')
+      calculatorApp.determineAction('=')
+      var actual = calculatorApp.result
+      var result = actual == expected
+      return result
+  }
 }
 module.exports = CalculatorAppTests
