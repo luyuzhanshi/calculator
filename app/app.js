@@ -1,44 +1,72 @@
 var CalculatorApp = function(defaultInput){
-    this.appSetup = function(defaultInput){
-    if(!defaultInput){
-      defaultInput = {}
-    }
-      if (!defaultInput.storedNumber){
-        defaultInput.storedNumber = ''
+      this.appSetup = function(defaultInput){
+      if(!defaultInput){
+        defaultInput = {}
       }
-      if (!defaultInput.leftOperand){
-        defaultInput.leftOperand = ''
+        if (!defaultInput.storedNumber){
+          defaultInput.storedNumber = ''
+        }
+        if (!defaultInput.leftOperand){
+          defaultInput.leftOperand = ''
+        }
+        if (!defaultInput.rightOperand){
+          defaultInput.rightOperand = ''
+        }
+        if (!defaultInput.operator){
+          defaultInput.operator = ''
+        }
+        if (!defaultInput.result){
+          defaultInput.result = ''
+        }
+        this.storedNumber = defaultInput.storedNumber
+        this.leftOperand = defaultInput.leftOperand
+        this.rightOperand = defaultInput.rightOperand
+        this.operator = defaultInput.operator
+        this.result = defaultInput.result
       }
-      if (!defaultInput.rightOperand){
-        defaultInput.rightOperand = ''
-      }
-      this.storedNumber = defaultInput.storedNumber
-      this.leftOperand = defaultInput.leftOperand
-      this.rightOperand = defaultInput.rightOperand
-    }
-    this.determineAction = function(input){
-      var inputIsNotNumber = input == 'x' || input == '+' || input == '/' || input == '-' || input == '='
-      var inputIsEquals = input == '='
+      this.determineAction = function(input){
+        var inputIsNotNumber = input == 'x' || input == '+' || input == '/' || input == '-' || input == '='
+        var inputIsEquals = input == '='
 
-      if (inputIsNotNumber){
+        if (inputIsNotNumber){
 
-        if (!inputIsEquals){
-          this.leftOperand = this.storedNumber
-          this.storedNumber = ''
+          if (!inputIsEquals){
+            this.leftOperand = this.storedNumber
+            this.operator = input
+            this.storedNumber = ''
+          }
+
+          if (inputIsEquals){
+            this.rightOperand = this.storedNumber
+            this.storedNumber = ''
+            this.calculateResult(this.operator)
+          }
+
         }
 
-        if (inputIsEquals){
-          this.rightOperand = this.storedNumber
-          this.storedNumber = ''
+        if (!inputIsNotNumber){
+          this.storedNumber += input
         }
 
       }
-
-      if (!inputIsNotNumber){
-        this.storedNumber += input
+      this.calculateResult = function(operator){
+      var leftOperand = parseFloat(this.leftOperand)
+      var rightOperand = parseFloat(this.rightOperand)
+      var result = ''
+      if (operator == 'x'){
+        result = leftOperand * rightOperand
       }
-
+      if (operator == '-'){
+        result = leftOperand - rightOperand
+      }
+      if (operator == '+'){
+        result = leftOperand + rightOperand
+      }
+      if (operator == '/'){
+        result = leftOperand / rightOperand
+      }
+      this.result = result.toString()
     }
-    this.appSetup(defaultInput)
-  }
+      this.appSetup(defaultInput)
+    }
 module.exports = CalculatorApp

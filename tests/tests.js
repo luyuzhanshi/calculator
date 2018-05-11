@@ -12,10 +12,10 @@ var CalculatorAppTests = function(){
 
   this['calculator can detect operators'] = function(){
     var calculatorApp = new CalculatorApp()
-    var expected = '2'
+    var expected = '+'
     calculatorApp.determineAction('2')
     calculatorApp.determineAction('+')
-    var actual = calculatorApp.storedNumber
+    var actual = calculatorApp.operator
     var result = actual == expected
     return result
   }
