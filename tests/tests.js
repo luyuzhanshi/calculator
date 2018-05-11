@@ -131,5 +131,19 @@ var CalculatorAppTests = function(){
         var result = actual == expected
         return result
     }
+  this['calculator can chain calculations after enter'] = function(){
+        var calculatorApp = new CalculatorApp()
+        var expected = '9'
+        calculatorApp.determineAction('2')
+        calculatorApp.determineAction('+')
+        calculatorApp.determineAction('3')
+        calculatorApp.determineAction('=')
+        calculatorApp.determineAction('+')
+        calculatorApp.determineAction('4')
+        calculatorApp.determineAction('=')
+        var actual = calculatorApp.result
+        var result = actual == expected
+        return result
+    }
 }
 module.exports = CalculatorAppTests
