@@ -35,12 +35,15 @@ var CalculatorApp = function(defaultInput){
 
     var inputIsEquals = input == '='
     var isNegative = input == "negative"
-
+    var backSpace = input == 'back'
     if (isNegative){
       this.storedNumber = '-' + this.storedNumber
       isNegative = false
     }
-
+    if (backSpace){
+      this.storedNumber = this.storedNumber.slice(0, this.storedNumber.length - 1)
+      backSpace = false
+    }
     if (inputIsNotNumber && input !== 'negative'){
 
       if (!inputIsEquals){
@@ -74,23 +77,23 @@ var CalculatorApp = function(defaultInput){
 
   }
   this.calculateResult = function(operator){
-  var leftOperand = parseFloat(this.leftOperand)
-  var rightOperand = parseFloat(this.rightOperand)
-  var result = ''
-  if (operator == 'x'){
-    result = leftOperand * rightOperand
+    var leftOperand = parseFloat(this.leftOperand)
+    var rightOperand = parseFloat(this.rightOperand)
+    var result = ''
+    if (operator == 'x'){
+      result = leftOperand * rightOperand
+    }
+    if (operator == '-'){
+      result = leftOperand - rightOperand
+    }
+    if (operator == '+'){
+      result = leftOperand + rightOperand
+    }
+    if (operator == '/'){
+      result = leftOperand / rightOperand
+    }
+    this.result = result.toString()
   }
-  if (operator == '-'){
-    result = leftOperand - rightOperand
-  }
-  if (operator == '+'){
-    result = leftOperand + rightOperand
-  }
-  if (operator == '/'){
-    result = leftOperand / rightOperand
-  }
-  this.result = result.toString()
-}
   this.appSetup(defaultInput)
 }
 module.exports = CalculatorApp
