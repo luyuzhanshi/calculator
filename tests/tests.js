@@ -120,7 +120,7 @@ var CalculatorAppTests = function(){
      }
    this['calculator can detect clear all input'] = function(){
         var calculatorApp = new CalculatorApp()
-        var expected = '7'
+        var expected = ''
         calculatorApp.determineAction('2')
         calculatorApp.determineAction('+')
         calculatorApp.determineAction('33')
