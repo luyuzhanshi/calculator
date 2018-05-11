@@ -69,4 +69,5 @@ var CalculatorApp = function(defaultInput){
     }
       this.appSetup(defaultInput)
     }
+    
 module.exports = CalculatorApp
