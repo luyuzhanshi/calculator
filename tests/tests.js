@@ -9,7 +9,7 @@ var CalculatorAppTests = function(){
     var result = actual == expected
     return result
   }
-  
+
   this['calculator can detect operators'] = function(){
     var calculatorApp = new CalculatorApp()
     var expected = '2'
@@ -20,5 +20,17 @@ var CalculatorAppTests = function(){
     return result
   }
 
+  this['calculator can detect equals'] = function(){
+      var calculatorApp = new CalculatorApp()
+      var expected = '2'
+      calculatorApp.determineAction('2')
+      calculatorApp.determineAction('+')
+      calculatorApp.determineAction('2')
+      calculatorApp.determineAction('=')
+      var actual = calculatorApp.rightOperand
+      var result = actual == expected
+      return result
+  }
+  
 }
 module.exports = CalculatorAppTests
