@@ -73,5 +73,20 @@ var CalculatorAppTests = function(){
       return result
   }
 
+  this['calculator can detect negative Numbers'] = function(){
+       var calculatorApp = new CalculatorApp()
+       var expected = '-10'
+       calculatorApp.determineAction('2')
+       calculatorApp.determineAction('+')
+       calculatorApp.determineAction('3')
+       calculatorApp.determineAction('x')
+       calculatorApp.determineAction('2')
+       calculatorApp.determineAction('negative')
+       calculatorApp.determineAction('=')
+       var actual = calculatorApp.result
+       var result = actual == expected
+       return result
+  }
+
 }
 module.exports = CalculatorAppTests
