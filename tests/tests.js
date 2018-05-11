@@ -103,5 +103,19 @@ var CalculatorAppTests = function(){
         return result
     }
 
+    this['calculator can detect clear current input'] = function(){
+       var calculatorApp = new CalculatorApp()
+       var expected = '10'
+       calculatorApp.determineAction('2')
+       calculatorApp.determineAction('+')
+       calculatorApp.determineAction('3')
+       calculatorApp.determineAction('x')
+       calculatorApp.determineAction('22')
+       calculatorApp.determineAction('clear')
+       calculatorApp.determineAction('=')
+       var actual = calculatorApp.result
+       var result = actual == expected
+       return result
+     }
 }
 module.exports = CalculatorAppTests
