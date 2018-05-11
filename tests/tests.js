@@ -118,5 +118,18 @@ var CalculatorAppTests = function(){
        debugger
        return result
      }
+   this['calculator can detect clear all input'] = function(){
+        var calculatorApp = new CalculatorApp()
+        var expected = '7'
+        calculatorApp.determineAction('2')
+        calculatorApp.determineAction('+')
+        calculatorApp.determineAction('33')
+        calculatorApp.determineAction('clear all')
+        calculatorApp.determineAction('5')
+        calculatorApp.determineAction('=')
+        var actual = calculatorApp.result
+        var result = actual == expected
+        return result
+    }
 }
 module.exports = CalculatorAppTests
