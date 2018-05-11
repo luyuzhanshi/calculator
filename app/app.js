@@ -23,13 +23,25 @@ var CalculatorApp = function(defaultInput){
     this.rightOperand = defaultInput.rightOperand
     this.operator = defaultInput.operator
     this.result = defaultInput.result
-    this.multipleOperations = false
   }
   this.determineAction = function(input){
-    var inputIsNotNumber = input == 'x' || input == '+' || input == '/' || input == '-' || input == '='
-    var inputIsEquals = input == '='
+    var inputIsNotNumber = input == 'x' ||
+                           input == '+' ||
+                           input == '/' ||
+                           input == '-' ||
+                           input == '=' ||
+                           input == 'negative' ||
+                           input == 'positive'
 
-    if (inputIsNotNumber){
+    var inputIsEquals = input == '='
+    var isNegative = input == "negative"
+
+    if (isNegative){
+      this.storedNumber = '-' + this.storedNumber
+      isNegative = false
+    }
+
+    if (inputIsNotNumber && input !== 'negative'){
 
       if (!inputIsEquals){
         if (this.multipleOperations){
@@ -49,13 +61,14 @@ var CalculatorApp = function(defaultInput){
 
       if (inputIsEquals){
         this.rightOperand = this.storedNumber
-        this.storedNumber = ''
         this.calculateResult(this.operator)
+        this.multipleOperations = false
+        this.storedNumber = this.result
       }
 
     }
 
-    if (!inputIsNotNumber){
+    if (!inputIsNotNumber && input !== 'negative'){
       this.storedNumber += input
     }
 
