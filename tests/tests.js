@@ -105,7 +105,7 @@ var CalculatorAppTests = function(){
 
     this['calculator can detect clear current input'] = function(){
        var calculatorApp = new CalculatorApp()
-       var expected = '10'
+       var expected = 'NaN'
        calculatorApp.determineAction('2')
        calculatorApp.determineAction('+')
        calculatorApp.determineAction('3')
@@ -115,6 +115,7 @@ var CalculatorAppTests = function(){
        calculatorApp.determineAction('=')
        var actual = calculatorApp.result
        var result = actual == expected
+       debugger
        return result
      }
 }
