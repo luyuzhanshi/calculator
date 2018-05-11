@@ -1,4 +1,3 @@
-var CalculatorApp = require('../calculator/app.js')
 var CalculatorAppTests = function(){
   this['calculator can store numbers'] = function(){
     var calculatorApp = new CalculatorApp()
@@ -9,4 +8,3 @@ var CalculatorAppTests = function(){
     return result
   }
 }
-module.exports = CalculatorAppTests
